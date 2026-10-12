@@ -1,0 +1,11 @@
+[OK] health: ok
+[OK] project: proj_bcf6b26feaeb
+[OK] upload: file_5aa389eca358 risk=critical task=task_scan_8ade8b101464
+[OK] scan: findings=3
+[OK] docx scan: risk=critical task=task_scan_724483576547
+[OK] alerts: total=5
+[OK] simulate: final_decision=deny
+[OK] redteam: detection_rate=1.0 block_rate=0.7142857142857143
+[OK] overview: risk=critical alerts=11
+
+AegisAgent backend smoke test passed.

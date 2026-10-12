@@ -1,0 +1,203 @@
+{
+  "origin": "Existing AegisAgent project; no historical Git commits available",
+  "files": [
+    {
+      "file": "backend/api/agent_simulator.py",
+      "original_sha256": "a8acdbeac38e1f02dd2311a1fc38f223d39e655b13a05a2db106b0c981bbc566",
+      "showcase_sha256": "a8acdbeac38e1f02dd2311a1fc38f223d39e655b13a05a2db106b0c981bbc566",
+      "changed": false
+    },
+    {
+      "file": "backend/api/alerts.py",
+      "original_sha256": "e8965eaffce62887bbd62c826e83daccf176ac743de842166380a99e943616bd",
+      "showcase_sha256": "e8965eaffce62887bbd62c826e83daccf176ac743de842166380a99e943616bd",
+      "changed": false
+    },
+    {
+      "file": "backend/api/dashboard.py",
+      "original_sha256": "b2ad7003973e81708429c2693e5a4c321ce5270fc24f18b53cc8682b76ecb682",
+      "showcase_sha256": "b2ad7003973e81708429c2693e5a4c321ce5270fc24f18b53cc8682b76ecb682",
+      "changed": false
+    },
+    {
+      "file": "backend/api/demo.py",
+      "original_sha256": "b364a6da3fe0f25c3f7bc03024cc65407db298dd26b10b8c54cbd4b09f96b384",
+      "showcase_sha256": "b364a6da3fe0f25c3f7bc03024cc65407db298dd26b10b8c54cbd4b09f96b384",
+      "changed": false
+    },
+    {
+      "file": "backend/api/events.py",
+      "original_sha256": "274605e65c2e752ae10e31571c8bcec410471215e2f57ed0d041bbaed95c0b05",
+      "showcase_sha256": "274605e65c2e752ae10e31571c8bcec410471215e2f57ed0d041bbaed95c0b05",
+      "changed": false
+    },
+    {
+      "file": "backend/api/files.py",
+      "original_sha256": "e615995df2e274e736cab428f2f723dbc69133186124b64483f08351b260cba1",
+      "showcase_sha256": "e615995df2e274e736cab428f2f723dbc69133186124b64483f08351b260cba1",
+      "changed": false
+    },
+    {
+      "file": "backend/api/policies.py",
+      "original_sha256": "c806689f0e84521a63df29427cca1e13a5deeeaf3464e298a298d48d83beb5a6",
+      "showcase_sha256": "c806689f0e84521a63df29427cca1e13a5deeeaf3464e298a298d48d83beb5a6",
+      "changed": false
+    },
+    {
+      "file": "backend/api/projects.py",
+      "original_sha256": "8e69d4e4bcdb65d8fe89e3ac86bde80cae39eb7a8fafb72a9761e252c6c13e9a",
+      "showcase_sha256": "8e69d4e4bcdb65d8fe89e3ac86bde80cae39eb7a8fafb72a9761e252c6c13e9a",
+      "changed": false
+    },
+    {
+      "file": "backend/api/redteam.py",
+      "original_sha256": "73bbab62c75b8bbfde3bac3f088853a76171fddb222a1a1baddb649287e57314",
+      "showcase_sha256": "73bbab62c75b8bbfde3bac3f088853a76171fddb222a1a1baddb649287e57314",
+      "changed": false
+    },
+    {
+      "file": "backend/api/scans.py",
+      "original_sha256": "edd1c4ef7b9b1e4ea8e47ea16857b70d5d635daf6a993f8e62925ccd20b61ab2",
+      "showcase_sha256": "edd1c4ef7b9b1e4ea8e47ea16857b70d5d635daf6a993f8e62925ccd20b61ab2",
+      "changed": false
+    },
+    {
+      "file": "backend/core/config.py",
+      "original_sha256": "9c634a5b4a01113fbb1615f84378a5dfd23844ac7422e0d3ffc51d48c3df8555",
+      "showcase_sha256": "847ea3a21316a8bc629c2fd4dc48ee7be1a8db1e30bf3a90e2c4d49af800a4f1",
+      "changed": true
+    },
+    {
+      "file": "backend/core/database.py",
+      "original_sha256": "ae985b1ef7de4a16dda02dcf7b831baa0811f745defcfa5e8be2a76efa86031b",
+      "showcase_sha256": "ae985b1ef7de4a16dda02dcf7b831baa0811f745defcfa5e8be2a76efa86031b",
+      "changed": false
+    },
+    {
+      "file": "backend/core/response.py",
+      "original_sha256": "4cb6340c4551b470eeafd45ffc5e3ce7ca52598ae9bf5a574dad5da86b3d7feb",
+      "showcase_sha256": "4cb6340c4551b470eeafd45ffc5e3ce7ca52598ae9bf5a574dad5da86b3d7feb",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/audit/alert_service.py",
+      "original_sha256": "fe6ddc5c35c93d57021a72e13f13f9220a79746617be89509a64802d2c5831e3",
+      "showcase_sha256": "fe6ddc5c35c93d57021a72e13f13f9220a79746617be89509a64802d2c5831e3",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/audit/event_service.py",
+      "original_sha256": "f9ba53d99a06c05d898db53cd4d2de85ef85905ace21db16a0642c90ff24384f",
+      "showcase_sha256": "f9ba53d99a06c05d898db53cd4d2de85ef85905ace21db16a0642c90ff24384f",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/demo/service.py",
+      "original_sha256": "54b431c07f2e90c732f6b4ea27271cf12d2e299f42aef16497f9fe6032610bce",
+      "showcase_sha256": "54b431c07f2e90c732f6b4ea27271cf12d2e299f42aef16497f9fe6032610bce",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/policy/default_policies.py",
+      "original_sha256": "12bd2bcea1c01f0d677db92aa9e70702f902a20d5faacc4c3aff36ac3f185563",
+      "showcase_sha256": "12bd2bcea1c01f0d677db92aa9e70702f902a20d5faacc4c3aff36ac3f185563",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/policy/engine.py",
+      "original_sha256": "51dc8cf784f0e2ebc634d3d483d5cb688f5f0bdfc38c71e546cdfe3f3cc17a21",
+      "showcase_sha256": "51dc8cf784f0e2ebc634d3d483d5cb688f5f0bdfc38c71e546cdfe3f3cc17a21",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/redteam/cases.py",
+      "original_sha256": "821554a2e15bb94c92764e068170083aecb3683a2c543b36ef37acd9ab57df37",
+      "showcase_sha256": "821554a2e15bb94c92764e068170083aecb3683a2c543b36ef37acd9ab57df37",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/redteam/runner.py",
+      "original_sha256": "e821c5193fc662e47d8bf0747b55e53bd23842379bdfce815bebebae22830b2a",
+      "showcase_sha256": "e821c5193fc662e47d8bf0747b55e53bd23842379bdfce815bebebae22830b2a",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/scanner/malicious_url.py",
+      "original_sha256": "d5cf4a06a6afad5c4227def7ed72207ade2ab61b82bb6500ff42c1435990977b",
+      "showcase_sha256": "d5cf4a06a6afad5c4227def7ed72207ade2ab61b82bb6500ff42c1435990977b",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/scanner/prompt_injection.py",
+      "original_sha256": "61641af4849756ccd83159f2873aa08ac9dbd19a9592f5bbd590eaf74e1e138a",
+      "showcase_sha256": "61641af4849756ccd83159f2873aa08ac9dbd19a9592f5bbd590eaf74e1e138a",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/scanner/sensitive_data.py",
+      "original_sha256": "7b1717938ecfeb2f95ac1b984b71e3a75a64d01cec095bb117d9b54efa139003",
+      "showcase_sha256": "7b1717938ecfeb2f95ac1b984b71e3a75a64d01cec095bb117d9b54efa139003",
+      "changed": false
+    },
+    {
+      "file": "backend/modules/scanner/service.py",
+      "original_sha256": "efd555878db459e032340cf1e0e6f5299d8b7eac5699d4bcdb49e323657fa168",
+      "showcase_sha256": "efd555878db459e032340cf1e0e6f5299d8b7eac5699d4bcdb49e323657fa168",
+      "changed": false
+    },
+    {
+      "file": "backend/scripts/seed_demo_data.py",
+      "original_sha256": "8026bad3d93afb170ae446d6c0a0c622ec930fa505fd5cb473c49fc55efa458a",
+      "showcase_sha256": "8026bad3d93afb170ae446d6c0a0c622ec930fa505fd5cb473c49fc55efa458a",
+      "changed": false
+    },
+    {
+      "file": "backend/scripts/smoke_test.py",
+      "original_sha256": "47072427cf5fc4ae081e227f27bfb34110b4db1cfdc9ce1c7aaf39dd04daac52",
+      "showcase_sha256": "47072427cf5fc4ae081e227f27bfb34110b4db1cfdc9ce1c7aaf39dd04daac52",
+      "changed": false
+    },
+    {
+      "file": "backend/scripts/test_api_abuse.py",
+      "original_sha256": "f87b733eb4b47fa8196ca3a3c519c67e35422b9c90922908deaf8e6ece7c9978",
+      "showcase_sha256": "f87b733eb4b47fa8196ca3a3c519c67e35422b9c90922908deaf8e6ece7c9978",
+      "changed": false
+    },
+    {
+      "file": "backend/scripts/test_pdf_scan.py",
+      "original_sha256": "d53260a5e56021826ea2041d43e3d48f2568162491b8f17d3b0dd48c8fd115a1",
+      "showcase_sha256": "bf11d6b4011a7987946c2f4e0d830cf4aae6093339f0e211819b1c47b4c527b0",
+      "changed": true
+    },
+    {
+      "file": "backend/main.py",
+      "original_sha256": "24b9c3f9195f61491482bfb407dda12763cad2a4d171a4dff151af9ba8f560f9",
+      "showcase_sha256": "24b9c3f9195f61491482bfb407dda12763cad2a4d171a4dff151af9ba8f560f9",
+      "changed": false
+    },
+    {
+      "file": "backend/requirements.txt",
+      "original_sha256": "83a9f0645e779ff65e7bc322202fe2ab08b05545db2e3155462136a13b2671e8",
+      "showcase_sha256": "83a9f0645e779ff65e7bc322202fe2ab08b05545db2e3155462136a13b2671e8",
+      "changed": false
+    },
+    {
+      "file": "frontend/index.html",
+      "original_sha256": "b5b4e282db405830781eec9b71e09ed05a5333a8e1686c65bee3f4911b9c86c0",
+      "showcase_sha256": "b5b4e282db405830781eec9b71e09ed05a5333a8e1686c65bee3f4911b9c86c0",
+      "changed": false
+    },
+    {
+      "file": "frontend/app.js",
+      "original_sha256": "d6e73fb799edfe92146f5ddb765c4ae17d0dacc77f34ac1aaa1da7f7ed7acae1",
+      "showcase_sha256": "d6e73fb799edfe92146f5ddb765c4ae17d0dacc77f34ac1aaa1da7f7ed7acae1",
+      "changed": false
+    },
+    {
+      "file": "frontend/styles.css",
+      "original_sha256": "2e566c8f0a978bf09b1ea8397dfa564d144d63b3f0188a1c11a822facc52aa7c",
+      "showcase_sha256": "2e566c8f0a978bf09b1ea8397dfa564d144d63b3f0188a1c11a822facc52aa7c",
+      "changed": false
+    }
+  ]
+}

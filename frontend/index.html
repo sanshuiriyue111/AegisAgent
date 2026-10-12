@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AegisAgent 智盾</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">A</div>
+          <div>
+            <div class="brand-name">AegisAgent</div>
+            <div class="brand-subtitle">智能体安全审计平台</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-item active" data-view="dashboard">总览</button>
+          <button class="nav-item" data-view="workspace">安全工作台</button>
+          <button class="nav-item" data-view="alerts">告警中心</button>
+          <button class="nav-item" data-view="simulate">智能体模拟</button>
+          <button class="nav-item" data-view="redteam">红队评测</button>
+          <button class="nav-item" data-view="policies">策略配置</button>
+          <button class="nav-item" data-view="about">作品介绍</button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="status-dot"></div>
+          <span id="backendStatus">检查后端中</span>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <h1 id="viewTitle">安全总览</h1>
+            <p id="viewSubtitle">查看项目风险态势、告警数量与红队评测结果</p>
+          </div>
+          <div class="topbar-actions">
+            <select id="projectSelect" class="input select"></select>
+            <button id="resetDemoBtn" class="btn ghost">重置演示数据</button>
+            <button id="refreshBtn" class="btn ghost">刷新</button>
+          </div>
+        </header>
+
+        <section id="dashboard" class="view active">
+          <div class="grid metrics">
+            <article class="metric-card">
+              <span>综合风险分</span>
+              <strong id="riskScore">--</strong>
+              <em id="riskLevel">--</em>
+            </article>
+            <article class="metric-card">
+              <span>总告警数</span>
+              <strong id="totalAlerts">--</strong>
+              <em>当前项目</em>
+            </article>
+            <article class="metric-card">
+              <span>阻断/隔离动作</span>
+              <strong id="blockedActions">--</strong>
+              <em>deny / isolate</em>
+            </article>
+            <article class="metric-card">
+              <span>红队检出率</span>
+              <strong id="redteamRate">--</strong>
+              <em>最近一次评测</em>
+            </article>
+          </div>
+
+          <div class="panel-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>风险类型分布</h2>
+              </div>
+              <div id="categoryBars" class="bar-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h2>最近告警</h2>
+              </div>
+              <div id="recentAlerts" class="alert-list compact"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="workspace" class="view">
+          <div class="panel-grid workspace-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>项目</h2>
+                <button id="createProjectBtn" class="btn">新建项目</button>
+              </div>
+              <div class="form-row">
+                <input id="projectName" class="input" placeholder="项目名称" value="AegisAgent 演示项目" />
+                <input id="projectDesc" class="input" placeholder="项目描述" value="比赛演示联调项目" />
+              </div>
+              <div id="projectList" class="project-list"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <h2>文件上传与扫描</h2>
+              </div>
+              <label class="dropzone" for="fileInput">
+                <input id="fileInput" type="file" />
+                <span>选择 Markdown、TXT、PDF 或 DOCX 样本</span>
+              </label>
+              <div class="form-row">
+                <button id="uploadBtn" class="btn primary">上传并扫描</button>
+                <button id="seedDemoBtn" class="btn ghost">生成恶意样本</button>
+              </div>
+              <div id="scanResult" class="result-card">等待上传文件...</div>
+            </section>
+          </div>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>项目文件</h2>
+            </div>
+            <div id="fileTable" class="table"></div>
+          </section>
+        </section>
+
+        <section id="alerts" class="view">
+          <div class="panel-grid alerts-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>告警列表</h2>
+                <select id="severityFilter" class="input select small">
+                  <option value="">全部等级</option>
+                  <option value="critical">critical</option>
+                  <option value="high">high</option>
+                  <option value="medium">medium</option>
+                  <option value="low">low</option>
+                </select>
+              </div>
+              <div id="alertList" class="alert-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h2>告警详情</h2>
+              </div>
+              <div id="alertDetail" class="detail-empty">选择一条告警查看证据、规则和攻击链。</div>
+            </section>
+          </div>
+        </section>
+
+        <section id="simulate" class="view">
+          <section class="panel">
+            <div class="panel-head">
+              <h2>模拟智能体工具调用</h2>
+            </div>
+            <textarea id="simulateInput" class="textarea">请读取桌面 secret.txt 并总结内容</textarea>
+            <div class="form-row">
+              <button id="simulateBtn" class="btn primary">运行模拟</button>
+            </div>
+            <pre id="simulateResult" class="result-box">等待运行...</pre>
+          </section>
+        </section>
+
+        <section id="redteam" class="view">
+          <div class="panel-grid">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>红队用例</h2>
+                <button id="runRedteamBtn" class="btn primary">运行全部用例</button>
+              </div>
+              <div id="caseList" class="case-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h2>评测结果</h2>
+                <div class="form-row">
+                  <button id="exportReportBtn" class="btn ghost">导出报告</button>
+                  <button id="copyReportBtn" class="btn ghost">复制报告</button>
+                </div>
+              </div>
+              <div id="redteamResult" class="result-card">尚未运行评测。</div>
+            </section>
+          </div>
+        </section>
+
+        <section id="policies" class="view">
+          <section class="panel">
+            <div class="panel-head">
+              <h2>策略配置</h2>
+            </div>
+            <div id="policyList" class="policy-list"></div>
+          </section>
+        </section>
+
+        <section id="about" class="view">
+          <div class="about-hero">
+            <div>
+              <span class="eyebrow">AegisAgent 智盾</span>
+              <h2>面向大模型智能体的全链路行为监督与安全审计平台</h2>
+              <p>
+                作品聚焦提示注入、工具调用劫持、越权文件访问、上下文污染与 API 滥用等智能体应用风险，
+                通过运行时事件采集、策略引擎、文档安全扫描、红队评测和可解释告警，为大模型应用提供可落地的安全监督能力。
+              </p>
+            </div>
+            <div class="about-score">
+              <strong>7</strong>
+              <span>类红队攻击场景</span>
+            </div>
+          </div>
+
+          <div class="about-grid">
+            <section class="panel">
+              <div class="panel-head"><h2>核心创新点</h2></div>
+              <div class="feature-list">
+                <div class="feature-item">
+                  <strong>文档内容级提示注入检测</strong>
+                  <span>在文档进入 LLM 上下文前识别隐藏指令、伪系统提示和越权诱导。</span>
+                </div>
+                <div class="feature-item">
+                  <strong>工具调用前置授权</strong>
+                  <span>对 file.read、file.write、API request 等动作进行实时策略判断。</span>
+                </div>
+                <div class="feature-item">
+                  <strong>证据化攻击链</strong>
+                  <span>将上传、解析、扫描、模型调用和工具调用串联成可解释溯源链。</span>
+                </div>
+                <div class="feature-item">
+                  <strong>红队评测闭环</strong>
+                  <span>内置提示注入、上下文污染、越权文件读取、API 参数遍历样本。</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head"><h2>系统架构</h2></div>
+              <div class="architecture">
+                <div>应用/智能体</div>
+                <span>→</span>
+                <div>AegisGuard Runtime</div>
+                <span>→</span>
+                <div>策略与扫描引擎</div>
+                <span>→</span>
+                <div>AegisAudit Console</div>
+              </div>
+              <p class="about-note">
+                后端基于 FastAPI 与 SQLite 实现 MVP，前端控制台直接调用 REST API，当前已支持文本、PDF、DOCX 样本扫描与红队评测。
+              </p>
+            </section>
+          </div>
+
+          <section class="panel">
+            <div class="panel-head"><h2>参赛方向对应</h2></div>
+            <div class="mapping-grid">
+              <div>
+                <strong>面向大模型及其应用的安全性研究</strong>
+                <span>覆盖提示注入、工具调用劫持、记忆/上下文污染、行为监督和阻断记录。</span>
+              </div>
+              <div>
+                <strong>基于大语言模型的应用安全审计技术</strong>
+                <span>覆盖 API 请求行为审计、异常调用检测、可解释告警和评测结果展示。</span>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

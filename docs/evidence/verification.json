@@ -1,0 +1,46 @@
+{
+  "verified_at_utc": "2026-10-12T07:03:53+00:00",
+  "python": "3.13.2",
+  "platform": "Darwin",
+  "checks": [
+    {
+      "name": "smoke_test",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "test_pdf_scan",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "test_api_abuse",
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "name": "demo_reset_and_7_synthetic_cases",
+      "passed": true
+    },
+    {
+      "name": "configurable_api_threshold",
+      "passed": true,
+      "threshold": 3,
+      "decisions": [
+        "allow",
+        "allow",
+        "alert_only"
+      ]
+    },
+    {
+      "name": "markdown_report_export",
+      "passed": true
+    },
+    {
+      "name": "console_assets_and_openapi",
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "scope": "Local functional regression with synthetic inputs, not security effectiveness or load testing."
+}
